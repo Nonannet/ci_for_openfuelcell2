@@ -1,0 +1,26 @@
+name: Build OpenFuelCell2 in OpenFOAM Container
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_com_2306:latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build/Test
+        run: |
+          source $WM_PROJECT_DIR/etc/bashrc
+          cd openFuelCell2/src
+          ./Allwmake
