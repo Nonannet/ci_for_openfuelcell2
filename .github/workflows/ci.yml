@@ -28,3 +28,4 @@ jobs:
           source $WM_PROJECT_DIR/etc/bashrc
           cd openFuelCell2/src
           ./Allwmake
+        shell: bash
