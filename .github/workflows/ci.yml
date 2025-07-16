@@ -23,6 +23,7 @@ jobs:
 
       - name: Build/Test
         run: |
+          echo "WM_PROJECT_DIR=/home/openfoam/OpenFOAM-2306" >> $GITHUB_ENV
           source $WM_PROJECT_DIR/etc/bashrc
           cd openFuelCell2/src
           ./Allwmake
