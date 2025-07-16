@@ -21,13 +21,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build/Test
+      - name: Build
         run: |
-          WM_PROJECT_DIR=/home/openfoam/OpenFOAM-2306
-          echo "WM_PROJECT_DIR=$WM_PROJECT_DIR" >> $GITHUB_ENV
+          REM WM_PROJECT_DIR=/home/openfoam/OpenFOAM-2306
+          REM echo "WM_PROJECT_DIR=$WM_PROJECT_DIR" >> $GITHUB_ENV
           set +e
           source $WM_PROJECT_DIR/etc/bashrc
           set -e
           cd src
           ./Allwmake
+        shell: bash
+
+      - name: Test
+        run: |
+          set +e
+          source $WM_PROJECT_DIR/etc/bashrc
+          set -e
+          cd run/SOFC
+          make mesh
+          make srun
         shell: bash
