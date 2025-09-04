@@ -19,7 +19,7 @@ jobs:
       matrix:
         container-image:
           - ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_com_2306:latest
-          - ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_com_2306_clang:latest
+          #- ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_com_2306_clang:latest
           #- ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_org_13:latest
 
     container:
