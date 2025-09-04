@@ -2,6 +2,7 @@
 
 [openFuelCell2](https://openfuelcell2.github.io/) is a computational fluid dynamics (CFD) toolbox for simulating electrochemical devices such as fuel cells and electrolysis. The solver is based on the open-source library, OpenFOAM®.
 
+
 ## About the code
 
 The source code was developed from a previous open-source repository called [openFuelCell](http://openfuelcell.sourceforge.net/). It was also inspired by the standard solver "reactingTwoPhaseEulerFoam" in OpenFOAM®. The solver can consider coupled problems with multi-region and multi-physics issues, including single and two phase flows, multiple species components, charge transfer, and electrochemical reactions in different regions. More applications and solvers will be available in the future.
