@@ -16,11 +16,12 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         container-image:
-          - ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_com_2306:latest
-          #- ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_com_2306_clang:latest
-          #- ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_org_13:latest
+          - ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_com_gcc:2306
+          - ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_com_clang:_2306
+          - ghcr.io/nonannet/nonannet/openfoam_ci_docker_images_org_gcc:13
 
     container:
       image: ${{ matrix.container-image }}
